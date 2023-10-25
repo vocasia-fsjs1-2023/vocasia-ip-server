@@ -18,6 +18,7 @@ Tiap dari tugas Backend kalian harus mempunyai:
 - Sequelize-Hooks (dibebaskan, tapi setidaknya ada hooks yang digunakan, contoh beforeCreate Password mengubah password menjadi Hashed password).
 - Implement Security (Auth based CRUD hanya bisa diedit oleh pemilik dsb menggunakan Json Web Token).
 - Implement Error Handling menggunakan Error Handler buatan kalian sendiri.
-- Structuring Folder sesuai best practice seperti pada gambar ![Model-Controller Struktur Folder](./assets/folder-structure.png "Model-Controller Struktur Folder")
+- Structuring Folder sesuai best practice seperti pada gambar
+  ![Model-Controller Struktur Folder](./assets/folder-structure.png "Model-Controller Struktur Folder")
 - Membuat Postman Collection kalian sendiri setelah menyelesaikan API yg dibuat (diexport kemudian disimpan pada folder Assets)
 - Tambahan!!, Menggunakan Package dari npmjs dari yang belum pernah diajari, kalian bisa explore apa yg kalian ingin pakai. 
