@@ -2,24 +2,35 @@ const { user } = require('../models');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const secret = 'rahasiabanget';
+const validator = require('validator');
 
 class userController {
   static async userRegister(req, res, next) {
     const body = req.body;
     const { name, email, password } = body;
-
+  
     try {
+      // Validasi email
+      if (!validator.isEmail(email)) {
+        return res.status(400).json({ error: 'Alamat email tidak valid' });
+      }
+  
+      // Validasi password (misalnya, minimal 6 karakter)
+      if (!validator.isLength(password, { min: 6 })) {
+        return res.status(400).json({ error: 'Password harus memiliki minimal 6 karakter' });
+      }
+  
       // Hash password
       const hashedPassword = bcrypt.hashSync(password, 10);
-
+  
       // Buat user baru
       const newUser = await user.create({
         name,
         email,
         password: hashedPassword,
       });
-
-      res.status(201).json({ message: 'Akun berhasil dibuat, silahkan login.' });
+  
+      res.status(201).json({ message: 'Akun berhasil dibuat, silakan login.' });
     } catch (error) {
       next(error);
     }
@@ -29,7 +40,13 @@ class userController {
     const { email, password } = req.body;
 
     try {
-      // Cari pengguna berdasarkan email
+     
+      // Validasi email
+    if (!validator.isEmail(email)) {
+      return res.status(400).json({ error: 'Alamat email tidak valid' });
+    } 
+    
+    // Cari pengguna berdasarkan email
       const updateuser = await user.findOne({ where: { email } });
 
       if (updateuser) {

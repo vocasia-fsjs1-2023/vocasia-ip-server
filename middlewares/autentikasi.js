@@ -8,7 +8,7 @@ async function authentication(req, res, next) {
     const token = bearer.slice(7);
     const decoded = jwt.verify(token, secret);
 
-    console.log("Token:", token);
+    // console.log("Token:", decoded);
 
     req.userId = decoded.id;
     req.email = decoded.email;

@@ -4,12 +4,14 @@ class todosController {
     
     static addTask(req, res) {
         const body = req.body;
+        const userId = req.userId
         const { title, description, completed } = body;
 
         createTodos.create({
             title,
             description,
-            completed
+            completed,
+            userId
         }).then((newTodos) => {
             res.status(201).json(newTodos);
         }).catch((error) => {
@@ -43,10 +45,13 @@ class todosController {
     };  
 
     static async getAllTaskCompleted(req, res) {
-      console.log("hello");
+      const {status}= req.params
+      const stringValue = status;
+      const booleanValue = status === "true" ? true : false;
+
         try {
             const completedTodos = await createTodos.findAll({
-              where: { completed: true },
+              where: { completed:booleanValue },
             });
         
             if (completedTodos.length > 0) {
@@ -61,7 +66,7 @@ class todosController {
     
         static async UpdateTaskId(req, res) {
             const { title, description } = req.body;
-            const taskId = req.params.id;
+            const taskId = req.query.id;
           
             try {
               const taskToUpdate = await createTodos.findByPk(taskId);
@@ -83,7 +88,7 @@ class todosController {
           };
 
     static async deleteTask(req, res) {
-      const id = Number(req.params.id);
+      const id = Number(req.query.id);
           
         const task = await createTodos.findByPk(id); 
           if (!task) {

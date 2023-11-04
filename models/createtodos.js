@@ -13,14 +13,29 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  createTodos.init({
-    title: DataTypes.STRING,
-    description: DataTypes.STRING,
-    completed: DataTypes.BOOLEAN,
-    userId: DataTypes.INTEGER
-  }, {
-    sequelize,
-    modelName: 'createTodos',
+  createTodos.init(
+    {
+      title: {
+        type: DataTypes.STRING,
+        validate: {
+          len: [1, 255], 
+        },
+      },
+      description: DataTypes.STRING,
+      completed: DataTypes.BOOLEAN,
+      userId: DataTypes.INTEGER,
+    },
+    {
+      sequelize,
+      modelName: 'createTodos',
+    }
+  );
+
+  createTodos.addHook('beforeCreate', 'validateTitleLength', (createTodo) => {
+    if (!createTodo.title) {
+      throw new Error('Title is required');
+    }
   });
+  
   return createTodos;
 };
