@@ -13,7 +13,7 @@ Tiap dari tugas Backend kalian harus mempunyai:
 - CRUD (Create, Read, Update, Delete) suatu Data yang ada own-based data (userId), dengan membawa Auth token untuk pembuatan Owned CRUD nya.
 - Menggunakan Sequelize + Sequelize-Cli dengan MySQL.
 - Membuat ERD, dan melakukan Migration menggunakan sequelie-cli yang jelas (tidak via GUI(dbeaver, mysql workbench, dsb)).
-- Seeding data (User, User dengan role khusus, atau Master Data yang kalian tentukan (product, buku, etc).
+- Seeding data (User, User dengan role khusus, atau Master Data yang kalian tentukan (product, buku, etc)).
 - Validation dari tiap data pada model (User dibuat unique pada method dia login(email/phone_number jika ada), dan pada column yang lain menyesuaikan misalnya email hanya boleh email, password minimal 6 karakter etc).
 - Sequelize-Hooks (dibebaskan, tapi setidaknya ada hooks yang digunakan, contoh beforeCreate Password mengubah password menjadi Hashed password).
 - Implement Security (Auth based CRUD hanya bisa diedit oleh pemilik dsb menggunakan Json Web Token).
