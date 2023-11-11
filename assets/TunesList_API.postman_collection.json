@@ -1,0 +1,904 @@
+{
+	"info": {
+		"_postman_id": "57fdba17-4e11-4fe1-b082-ab515fb9dadb",
+		"name": "TunesList_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30242847"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Fadilah Suryani Hasibuan\",\r\n    \"email\": \"suryanifdlh@gmail.com\",\r\n    \"password\": \"fsryn190307\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Fadilah Suryani Hasibuan\",\r\n    \"email\": \"suryanifdlh@gmail.com\",\r\n    \"password\": \"fsryn190307\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Song",
+			"item": [
+				{
+					"name": "POST Create Song",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJzdXJ5YW5pZmRsaEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2OTk3MjI0NTN9.enIEKL4nqizkzU1KO_jCcu_015XlrjNU2X1FdTSyF-U",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"I Will Always Love You\",\r\n \"description\": \"Lagu cinta yang ikonik dari Whitney Houston.\",\r\n  \"artis\": \"Whitney Houston\",\r\n  \"genre\": \"Romantic\",\r\n  \"userId\": \"12\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/song",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"song"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "POST Create Song",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"I Will Always Love You\",\r\n \"description\": \"Lagu cinta yang ikonik dari Whitney Houston.\",\r\n  \"artis\": \"Whitney Houston\",\r\n  \"genre\": \"Romantic\",\r\n  \"userId\": \"12\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/song",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"song"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "240"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f0-63xBC6lyEivs1VKYBDiEfpzMd1w\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Nov 2023 17:38:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 12,\n    \"title\": \"I Will Always Love You\",\n    \"description\": \"Lagu cinta yang ikonik dari Whitney Houston.\",\n    \"artis\": \"Whitney Houston\",\n    \"genre\": \"Romantic\",\n    \"userId\": \"12\",\n    \"updatedAt\": \"2023-11-11T17:38:08.727Z\",\n    \"createdAt\": \"2023-11-11T17:38:08.727Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "GET Song List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/song",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"song"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GET Song List",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/song",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"song"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2778"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ada-Q6pu/grxzBIj0n+WUNaDxBpxdG8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Nov 2023 17:18:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"title\": \"How You Like That\",\n        \"description\": \"Single hit Blackpink dengan irama yang kuat.\",\n        \"artis\": \"Blackpink\",\n        \"genre\": \"K-Pop\",\n        \"userId\": 1,\n        \"createdAt\": \"2023-11-11T16:38:51.000Z\",\n        \"updatedAt\": \"2023-11-11T16:38:51.000Z\",\n        \"Reviews\": []\n    },\n    {\n        \"id\": 2,\n        \"title\": \"Maafkan Aku\",\n        \"description\": \"Lagu emosional dari Tiara Andini yang menyentuh hati.\",\n        \"artis\": \"Tiara Andini\",\n        \"genre\": \"Pop\",\n        \"userId\": 2,\n        \"createdAt\": \"2023-11-11T16:38:51.000Z\",\n        \"updatedAt\": \"2023-11-11T16:38:51.000Z\",\n        \"Reviews\": []\n    },\n    {\n        \"id\": 3,\n        \"title\": \"Perfect\",\n        \"description\": \"Ed Sheeran menyuguhkan lagu romantis yang sempurna untuk momen spesial.\",\n        \"artis\": \"Ed Sheeran\",\n        \"genre\": \"Pop\",\n        \"userId\": 3,\n        \"createdAt\": \"2023-11-11T16:38:51.000Z\",\n        \"updatedAt\": \"2023-11-11T16:38:51.000Z\",\n        \"Reviews\": []\n    },\n    {\n        \"id\": 4,\n        \"title\": \"Butter\",\n        \"description\": \"Smooth and upbeat song that showcases BTS's charm.\",\n        \"artis\": \"BTS\",\n        \"genre\": \"K-Pop\",\n        \"userId\": 4,\n        \"createdAt\": \"2023-11-11T16:38:51.000Z\",\n        \"updatedAt\": \"2023-11-11T16:38:51.000Z\",\n        \"Reviews\": []\n    },\n    {\n        \"id\": 5,\n        \"title\": \"Kisah Sempurna\",\n        \"description\": \"Lagu romantis Mahalini yang menggambarkan kisah cinta yang sempurna.\",\n        \"artis\": \"Mahalini\",\n        \"genre\": \"Pop\",\n        \"userId\": 5,\n        \"createdAt\": \"2023-11-11T16:38:51.000Z\",\n        \"updatedAt\": \"2023-11-11T16:38:51.000Z\",\n        \"Reviews\": []\n    },\n    {\n        \"id\": 6,\n        \"title\": \"Havana\",\n        \"description\": \"Camila Cabello membawakan lagu yang memadukan ritme Latin yang meriah.\",\n        \"artis\": \"Camila Cabello\",\n        \"genre\": \"Pop\",\n        \"userId\": 6,\n        \"createdAt\": \"2023-11-11T16:38:51.000Z\",\n        \"updatedAt\": \"2023-11-11T16:38:51.000Z\",\n        \"Reviews\": []\n    },\n    {\n        \"id\": 7,\n        \"title\": \"Ya Nabi Salam Alaika\",\n        \"description\": \"Lagu pujian untuk Nabi Muhammad SAW.\",\n        \"artis\": \"Maher Zain\",\n        \"genre\": \"Religi\",\n        \"userId\": 7,\n        \"createdAt\": \"2023-11-11T16:38:51.000Z\",\n        \"updatedAt\": \"2023-11-11T16:38:51.000Z\",\n        \"Reviews\": []\n    },\n    {\n        \"id\": 8,\n        \"title\": \"In My Blood\",\n        \"description\": \"Shawn Mendes menghadirkan lagu dengan lirik penuh makna tentang keberanian dan ketahanan.\",\n        \"artis\": \"Shawn Mendes\",\n        \"genre\": \"Pop\",\n        \"userId\": 8,\n        \"createdAt\": \"2023-11-11T16:38:51.000Z\",\n        \"updatedAt\": \"2023-11-11T16:38:51.000Z\",\n        \"Reviews\": []\n    },\n    {\n        \"id\": 9,\n        \"title\": \"Sang Dewi\",\n        \"description\": \"Lagu Lyodra yang megah dan menceritakan tentang keindahan seorang dewi.\",\n        \"artis\": \"Lyodra\",\n        \"genre\": \"Pop\",\n        \"userId\": 9,\n        \"createdAt\": \"2023-11-11T16:38:51.000Z\",\n        \"updatedAt\": \"2023-11-11T16:38:51.000Z\",\n        \"Reviews\": []\n    },\n    {\n        \"id\": 10,\n        \"title\": \"Money\",\n        \"description\": \"Lagu hits BLACKPINK yang menyuarakan tentang keberhasilan dan kekayaan.\",\n        \"artis\": \"BLACKPINK\",\n        \"genre\": \"K-pop\",\n        \"userId\": 10,\n        \"createdAt\": \"2023-11-11T16:38:51.000Z\",\n        \"updatedAt\": \"2023-11-11T16:38:51.000Z\",\n        \"Reviews\": []\n    },\n    {\n        \"id\": 11,\n        \"title\": \"Ayat-Ayat Cinta\",\n        \"description\": \"Lagu cinta Rossa yang terkenal, bercerita tentang indahnya perasaan cinta sebagaimana tergambar dalam ayat-ayat cinta.\",\n        \"artis\": \"Rossa\",\n        \"genre\": \"Pop\",\n        \"userId\": 11,\n        \"createdAt\": \"2023-11-11T17:17:03.000Z\",\n        \"updatedAt\": \"2023-11-11T17:17:03.000Z\",\n        \"Reviews\": []\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "GET Song By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/Song/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Song",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "11"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GET Song By ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/Song/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"Song",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "11"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "290"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"122-l+2EmF8spYQnFx3KFmkTSLwunCw\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Nov 2023 17:20:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 11,\n    \"title\": \"Ayat-Ayat Cinta\",\n    \"description\": \"Lagu cinta Rossa yang terkenal, bercerita tentang indahnya perasaan cinta sebagaimana tergambar dalam ayat-ayat cinta.\",\n    \"artis\": \"Rossa\",\n    \"genre\": \"Pop\",\n    \"userId\": 11,\n    \"createdAt\": \"2023-11-11T17:17:03.000Z\",\n    \"updatedAt\": \"2023-11-11T17:17:03.000Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "PUT Song Update Data",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJzdXJ5YW5pZmRsaEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2OTk3MjI0NTN9.enIEKL4nqizkzU1KO_jCcu_015XlrjNU2X1FdTSyF-U",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"How You Like That\",\r\n \"description\": \"Single hit Blackpink dengan irama yang kuat.\",\r\n  \"artis\": \"Blackpink\",\r\n  \"genre\": \"K-Pop\",\r\n  \"userId\": \"11\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/Song/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Song",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "PUT Song Update Data",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"How You Like That\",\r\n \"description\": \"Single hit Blackpink dengan irama yang kuat.\",\r\n  \"artis\": \"Blackpink\",\r\n  \"genre\": \"K-Pop\",\r\n  \"userId\": \"11\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/Song/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"Song",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "225"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e1-aOmNEIYkbZDlNyFhxPJ+wE2hG1c\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Nov 2023 17:25:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"title\": \"How You Like That\",\n    \"description\": \"Single hit Blackpink dengan irama yang kuat.\",\n    \"artis\": \"Blackpink\",\n    \"genre\": \"K-Pop\",\n    \"userId\": \"11\",\n    \"createdAt\": \"2023-11-11T16:38:51.000Z\",\n    \"updatedAt\": \"2023-11-11T17:25:38.141Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "DELETE Song By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJzdXJ5YW5pZmRsaEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2OTk3MjI0NTN9.enIEKL4nqizkzU1KO_jCcu_015XlrjNU2X1FdTSyF-U",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/song/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"song",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "12"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "DELETE Song By ID",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/song/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"song",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "12"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Nov 2023 17:38:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Review",
+			"item": [
+				{
+					"name": "POST Create Review",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJzdXJ5YW5pZmRsaEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2OTk3MjI0NTN9.enIEKL4nqizkzU1KO_jCcu_015XlrjNU2X1FdTSyF-U",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Misteri Malam\",\r\n \"description\": \"Lagu pop Indonesia dari Shanna Shannon yang berjudul Misteri Malam.\",\r\n  \"rating\":7,\r\n    \"comment\":\"Lagu ini sungguh mengenang kenangan yang pernah ada.\",\r\n    \"songId\":1,\r\n    \"userId\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/review",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"review"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "POST Create Review",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Misteri Malam\",\r\n \"description\": \"Lagu pop Indonesia dari Shanna Shannon yang berjudul Misteri Malam.\",\r\n  \"rating\":7,\r\n    \"comment\":\"Lagu ini sungguh mengenang kenangan yang pernah ada.\",\r\n    \"songId\":1,\r\n    \"userId\":1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/review",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"review"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "292"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"124-qPkzaW6KVYKnQbtD9phxR7jtO4A\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Nov 2023 18:07:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 4,\n    \"title\": \"Misteri Malam\",\n    \"description\": \"Lagu pop Indonesia dari Shanna Shannon yang berjudul Misteri Malam.\",\n    \"rating\": 7,\n    \"comment\": \"Lagu ini sungguh mengenang kenangan yang pernah ada.\",\n    \"userId\": 1,\n    \"songId\": 1,\n    \"updatedAt\": \"2023-11-11T18:07:21.730Z\",\n    \"createdAt\": \"2023-11-11T18:07:21.730Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "GET Review List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/Review?id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Review"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GET Review List",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/Review?id=1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"Review"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "512"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"200-8I5E1jefKiB6yaPd4jtICDUyQeY\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Nov 2023 17:49:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"title\": \"Pink Venom\",\n        \"description\": \"Single hit Blackpink dengan irama yang kuat.\",\n        \"comment\": \"Lagu ini sungguh menggelegar! Tarian dan beat-nya sangat memukau.\",\n        \"rating\": 9,\n        \"userId\": 1,\n        \"songId\": 1,\n        \"createdAt\": \"2023-11-11T17:47:33.000Z\",\n        \"updatedAt\": \"2023-11-11T17:47:33.000Z\",\n        \"Song\": {\n            \"id\": 1,\n            \"title\": \"How You Like That\",\n            \"description\": \"Single hit Blackpink dengan irama yang kuat.\",\n            \"artis\": \"Blackpink\",\n            \"genre\": \"K-Pop\",\n            \"userId\": 11,\n            \"createdAt\": \"2023-11-11T16:38:51.000Z\",\n            \"updatedAt\": \"2023-11-11T17:25:38.000Z\"\n        }\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "PUT Review Update Data",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJzdXJ5YW5pZmRsaEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2OTk3MjI0NTN9.enIEKL4nqizkzU1KO_jCcu_015XlrjNU2X1FdTSyF-U",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Pink Venom\",\r\n \"description\": \"Single hit Blackpink dengan irama yang kuat.\",\r\n  \"rating\":9,\r\n    \"comment\":\"Lagu ini sungguh menggelegar! Tarian dan beat-nya sangat memukau.\",\r\n    \"songId\":1,\r\n    \"userId\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/review/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"review",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "PUT Review Update Data",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Pink Venom\",\r\n \"description\": \"Single hit Blackpink dengan irama yang kuat.\",\r\n  \"rating\":9,\r\n    \"comment\":\"Lagu ini sungguh menggelegar! Tarian dan beat-nya sangat memukau.\",\r\n    \"songId\":1,\r\n    \"userId\":1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/review/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"review",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "279"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"117-O39C9nXd1tQHuIgYA2CcEmitZXs\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Nov 2023 17:53:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"title\": \"Pink Venom\",\n    \"description\": \"Single hit Blackpink dengan irama yang kuat.\",\n    \"comment\": \"Lagu ini sungguh menggelegar! Tarian dan beat-nya sangat memukau.\",\n    \"rating\": 9,\n    \"userId\": 1,\n    \"songId\": 1,\n    \"createdAt\": \"2023-11-11T17:47:33.000Z\",\n    \"updatedAt\": \"2023-11-11T17:47:33.000Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "DELETE Review By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJzdXJ5YW5pZmRsaEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2OTk3MjI0NTN9.enIEKL4nqizkzU1KO_jCcu_015XlrjNU2X1FdTSyF-U",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/review/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"review",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "DELETE Review By Id",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/review/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"review",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "4"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Nov 2023 18:07:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		}
+	]
+}
