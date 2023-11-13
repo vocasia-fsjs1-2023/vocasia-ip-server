@@ -1,0 +1,30 @@
+{
+  "name": "vocasia-ip-server",
+  "version": "1.0.0",
+  "description": "Individual Project - Server Side",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vocasia-fsjs1-2023/vocasia-ip-server.git"
+  },
+  "author": "Bimo Cahyo Kusumo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vocasia-fsjs1-2023/vocasia-ip-server/issues"
+  },
+  "homepage": "https://github.com/vocasia-fsjs1-2023/vocasia-ip-server#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.6.2",
+    "sequelize": "^6.33.0"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.6.1"
+  }
+}
