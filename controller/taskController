@@ -1,0 +1,60 @@
+const { Task } = require('../models');
+
+const taskController = {
+    postTask: async (req, res) => {
+        const body = req.body;
+    
+        const { title, description, status, deadline, userId } = body;
+    
+        try {
+          const newTask = await Task.create({
+            title,
+            description,
+            status,
+            deadline,
+            userId,
+          });
+    
+          res.status(201).json(newTask);
+        } catch (error) {
+          console.error(error);
+          res.status(500).json({ error: 'Internal Server Error' });
+        }
+      },
+
+      getTask: async(req, res) => {
+        //HANDLE INPUT (CHECK USER ID)
+            const userId = Number(req.query['userId']);
+        
+        //HANDLE PROCASSING DATA
+        let response;
+        try {
+            const Tasks = await Task.findAll({
+                where: {
+                  userId: userId
+                }
+              });
+            response = Tasks;
+        } catch (error) {
+            console.log(error);
+            response = JSON.stringify(error);
+        }
+        res.status(200).json(response);
+        },
+
+       deleteTask: async(req, res) => {
+            const id = Number(req.params['id']);
+        
+            //HANDLE PROCASSING DATA
+          await Task.destroy({
+                where: {
+                    id: id,
+                },
+            });
+        
+            //HANDLE RETURN RESPONSE
+            res.status(200).json(`postingan dengan id ${id} berhasil dihapus.`);
+        },
+}
+
+module.exports = taskController;
